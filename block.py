@@ -1,4 +1,5 @@
 import hashlib as hasher
+import datetime as date 
 
 class Block:
     def __init__(self, index, timestamp, data, previous_hash):
@@ -15,3 +16,6 @@ class Block:
                    str(self.data) +
                    str(self.previous_hash))
         return sha.hexdigest()
+
+def create_genesis_block():
+    return Block(0, date.datetime.now(), "Genesis Block", "0")
